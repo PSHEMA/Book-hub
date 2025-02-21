@@ -23,9 +23,7 @@ const BookList: React.FC = () => {
             const response = await axios.get('http://localhost:5000/api/books', {
                 params: { genre, rating, search: searchTerm, page: currentPage, limit },
             });
-
             console.log('API Response:', response.data);
-  
             if (response.data.data) {
                 setBooks(response.data.data);
                 setTotalPages(response.data.pagination.pages);
@@ -37,7 +35,7 @@ const BookList: React.FC = () => {
         } catch (error) {
             console.error('Error fetching books:', error);
             setError('Failed to fetch books. Please try again later.');
-            setBooks([]); 
+            setBooks([]);
         }
         setLoading(false);
     };
