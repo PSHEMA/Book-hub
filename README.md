@@ -97,15 +97,6 @@ Follow these steps to set up the project locally.
 
 ---
 
-## **Deployment**
-### **Backend**
-- Deployed on **Render**: [https://book-hub-backend.onrender.com](https://book-hub-backend.onrender.com)
-
-### **Frontend**
-- Deployed on **Vercel**: [https://book-hub-frontend.vercel.app](https://book-hub-frontend.vercel.app)
-
----
-
 ## **Project Structure**
 ```
 book-hub/
