@@ -68,15 +68,12 @@ app.get('/api/books', (req: Request, res: Response) => {
     if (conditions.length) {
         query += ' WHERE ' + conditions.join(' AND ');
     }
-    
-    // Add total count query for pagination
+
     const countQuery = query.replace('SELECT *', 'SELECT COUNT(*) as total');
-    
-    // Add pagination to the main query
+
     query += ' LIMIT ? OFFSET ?';
     params.push(limit, (page - 1) * limit);
 
-    // Execute count query first
     connection.query(countQuery, params.slice(0, params.length - 2), (countErr, countResults: any) => {
         if (countErr) {
             console.error('Error counting books:', countErr);
@@ -85,8 +82,7 @@ app.get('/api/books', (req: Request, res: Response) => {
         }
         
         const total = countResults[0].total;
-        
-        // Then execute the main query
+
         connection.query(query, params, (err, results) => {
             if (err) {
                 console.error('Error fetching books:', err);
