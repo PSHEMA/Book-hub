@@ -85,15 +85,11 @@ Follow these steps to set up the project locally.
    ```bash
    npm install
    ```
-3. Create a `.env` file in the `frontend` folder and add the following environment variable:
-   ```
-   VITE_API_URL=http://localhost:5000
-   ```
-4. Start the frontend development server:
+3. Start the frontend development server:
    ```bash
    npm run dev
    ```
-5. Open your browser and navigate to `http://localhost:5173`.
+4. Open your browser and navigate to `http://localhost:5173`.
 
 ---
 
